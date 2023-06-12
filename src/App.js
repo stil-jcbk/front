@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Login from "./pages/login/login";
+import PageLayout from "./pages/pagelayout/pagelayout";
+import Posts from "./pages/posts/posts";
+import Approved from "./pages/approved/approved";
+import Picked from "./pages/picked/picked";
+import "./App.css";
+import LoginLayout from "./pages/loginlayout/loginlayout";
+import Register from "./pages/login/register";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<PageLayout />}>
+            <Route path="/">
+              <Route path="/posts" element={<Posts />} />
+              <Route path="/approved" element={<Approved />} />
+              <Route path="/picked" element={<Picked />} />
+            </Route>
+          </Route>
+          <Route element={<LoginLayout />}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Route>
+          <Route path={"*"} element={<Navigate to={"/"} />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

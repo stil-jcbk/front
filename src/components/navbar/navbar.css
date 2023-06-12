@@ -1,0 +1,35 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 0 20px 0 20px;
+  height: 80px;
+  background-color: rgb(27, 27, 27);
+  color: #f2c67d;
+  user-select: none;
+}
+
+.navbar .hero {
+  margin: 0;
+  font-family: "Rubik";
+  font-weight: 800;
+  font-size: 40px;
+}
+
+.navbar .nav {
+  display: flex;
+  gap: 20px;
+  margin-left: auto;
+  margin-right: 20px;
+  font-family: "Rubik";
+  font-size: 18px;
+}
+
+.navbar .nav a {
+  text-decoration: none;
+  color: #f2c67d;
+}
+
+.navbar .nav a:hover {
+  opacity: 70%;
+  cursor: pointer;
+}
